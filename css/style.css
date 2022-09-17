@@ -8,6 +8,10 @@ body, h1, p {
 
 body {
   font-family: 'Helvetica', 'Arial', sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
 }
 
 .header{
