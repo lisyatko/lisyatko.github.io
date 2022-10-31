@@ -2,8 +2,8 @@ h1 {
   font-size: 210%;
   margin-bottom: 0;
   padding-bottom: 1.1rem;
-  padding-top: 0rem;
-}
+  padding-top: 0rem;}
+
 h2 {
   font-size: 170%;
   margin-bottom: 0;
@@ -16,6 +16,14 @@ p {
   padding-bottom: 0.8rem;
   line-height: 1.6rem;
   padding-top: 0.5rem;}
+
+.expl {
+  font-size:90%;
+  margin-top: -1rem;
+  line-height: 1.2}
+
+.cup {
+  text-decoration: none;}
 
 .name {
     margin-top: 2rem;
