@@ -20,10 +20,10 @@ p {
 .expl {
   font-size:90%;
   margin-top: -1rem;
-  line-height: 1.2}
+  line-height: 1.2} /*мелкие дисклеймеры*/
 
 .cup {
-  text-decoration: none;}
+  text-decoration: none;} /*кубок email-competitors*/
 
 .name {
     margin-top: 2rem;
