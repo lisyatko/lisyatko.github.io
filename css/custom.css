@@ -18,7 +18,7 @@ p {
   padding-top: 0.5rem;}
 
 .expl {
-  font-size:90%;
+  font-size: 90%;
   margin-top: -1rem;
   line-height: 1.2} /*мелкие дисклеймеры*/
 
@@ -26,9 +26,10 @@ p {
   text-decoration: none;} /*кубок email-competitors*/
 
 .name {
-    margin-top: 2rem;
-    font-size: 230%;
-    padding-bottom: 1rem;}
+    margin-top: 1rem;
+    font-size: 240%;
+    padding-bottom: 1rem;
+    font-weight: bold;}
 
 .copyright {
     font-size: 95%;
@@ -43,10 +44,10 @@ p {
   padding-top: 0.2rem;}
 
 .subline {
-  font-size:100%;
+  font-size:113%;
   margin-bottom: 0;
   padding-bottom: 0;
-  line-height: 0.3rem;
+  line-height: 0.1rem;
   padding-top: 0;}
 
 .row {
