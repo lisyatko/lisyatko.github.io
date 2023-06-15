@@ -22,6 +22,12 @@ p {
   margin-top: -1rem;
   line-height: 1.2} /*мелкие дисклеймеры*/
 
+
+.linkexpl {
+  font-size: 90%;
+  margin-top: 0.6rem;
+  line-height: 1.2} /*линки на блоги*/
+
 .name {
     margin-top: 1rem;
     font-size: 240%;
