@@ -63,11 +63,12 @@ a:hover {
   margin-right: 70px; /* по макету меню начинается на 180px */
   padding: 0;
   font-size: 12px;
-  line-height: 16.5px;
+  line-height: 17px;
 }
 
 .header .navbar-nav {
-  gap: 44px;
+  gap: 45px; /* в макете 44, но браузер рендерит слова Манропа чуть уже Фигмы —
+                с 45px позиции ссылок совпадают с макетом точнее */
 }
 
 .header .navbar-nav .nav-link {
@@ -80,21 +81,21 @@ a:hover {
   gap: 16px;
 }
 
-.header-icons a {
+.header-icons a,
+.navbar-toggler {
   line-height: 0;
 }
 
 .navbar-toggler {
   border: 0;
   padding: 0;
-  line-height: 0;
 }
 
 .navbar-toggler:focus {
   box-shadow: none;
 }
 
-@media (max-width: 991.98px) {
+@media (width < 992px) {
   .logo {
     margin-right: 0;
   }
@@ -120,7 +121,7 @@ a:hover {
 }
 
 /* шире 1000px фото растёт пропорционально, как в макете */
-@media (min-width: 1000px) {
+@media (width >= 1000px) {
   .hero img {
     height: auto;
   }
@@ -132,7 +133,7 @@ a:hover {
   left: 50%;
   transform: translateX(-50%);
   font-size: 20px;
-  line-height: 27.6px;
+  line-height: 28px;
   color: #fff;
 }
 
@@ -176,7 +177,7 @@ a:hover {
   line-height: 0;
 }
 
-@media (max-width: 767.98px) {
+@media (width < 768px) {
   .products {
     flex-direction: column;
     gap: 32px;
@@ -195,11 +196,11 @@ a:hover {
   margin-bottom: 36px;
   text-align: center;
   font-size: min(70px, 12vw); /* на узких экранах уменьшается, чтобы не вылезать */
-  line-height: 1.379;
+  line-height: 1.38;
 }
 
-/* Сетка подвала: две строки, «Подарочные карты» и «Мы в соцсетях»
-   встают во вторую строку под своими колонками */
+/* Сетка подвала: две строки, вторые разделы колонок («Подарочные карты»,
+   «Мы в соцсетях») встают во вторую строку под своими соседями */
 
 .footer-columns {
   display: grid;
@@ -221,13 +222,16 @@ a:hover {
   margin-bottom: 8px;
 }
 
-.subscribe input {
+.subscribe input,
+.subscribe button {
   width: 100%;
   height: 27px;
-  padding: 0 10px;
-  border: .5px solid #bab5b5;
+}
+
+.subscribe input {
+  padding: 0 7px; /* вместе с рамкой — 8px до текста, как в макете */
+  border: 1px solid #bab5b5;
   background: #fff;
-  font-size: 12px;
   text-transform: none; /* введённый адрес — обычным регистром */
 }
 
@@ -238,13 +242,10 @@ a:hover {
 }
 
 .subscribe button {
-  width: 100%;
-  height: 27px;
   margin-top: 8px;
   border: 0;
   background: #000;
   color: #fff;
-  font-size: 12px;
   text-transform: uppercase;
 }
 
@@ -257,15 +258,30 @@ a:hover {
   text-transform: none;
 }
 
-@media (min-width: 1000px) {
+/* До 1000px форма подписки стоит в самом низу правой колонки,
+   а когда колонка уже плейсхолдера (от 420px) — уезжает вниз на всю ширину */
+
+@media (width < 1000px) {
+  .subscribe {
+    order: 1;
+  }
+}
+
+@media (width < 420px) {
+  .subscribe {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (width >= 1000px) {
   .footer-columns {
     grid-template-columns: 231px 251px 251px 227px; /* ширины колонок из макета */
     gap: 16px 0;
     justify-content: space-between; /* шире 1000px колонки расходятся к краям */
   }
 
-  .footer-group-tall {
-    grid-row: span 2;
+  .footer-tall {
+    grid-row: span 2; /* «Магазин» и форма подписки занимают обе строки сетки */
   }
 
   .subscribe {
