@@ -1,0 +1,274 @@
+/* Фирменный шрифт логотипа и крупных надписей */
+
+@font-face {
+  font-family: 'Benzin';
+  src: url('../fonts/Benzin-Regular.woff2') format('woff2'),
+       url('../fonts/Benzin-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== База =====
+   Почти весь текст страницы — Манроп 10/14 в верхнем регистре,
+   поэтому это задано один раз на body, а не классами на каждом элементе */
+
+body {
+  font-family: 'Manrope', Arial, sans-serif;
+  font-size: 10px;
+  line-height: 14px;
+  color: #000;
+  background: #f3f2f0;
+  text-transform: uppercase;
+}
+
+h1, h2, p, ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+h2 {
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 500;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: .7;
+}
+
+.logo,
+.hero h1,
+.footer-title {
+  font-family: 'Benzin', sans-serif;
+  font-weight: 400;
+}
+
+/* ===== Шапка ===== */
+
+.header {
+  padding: 10px 20px 9px;
+}
+
+.logo {
+  margin-right: 70px; /* по макету меню начинается на 180px */
+  padding: 0;
+  font-size: 12px;
+  line-height: 16.5px;
+}
+
+.header .navbar-nav {
+  gap: 44px;
+}
+
+.header .navbar-nav .nav-link {
+  padding: 0;
+  font-weight: 500;
+  color: #000;
+}
+
+.header-icons {
+  gap: 16px;
+}
+
+.header-icons a {
+  line-height: 0;
+}
+
+.navbar-toggler {
+  border: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+@media (max-width: 991.98px) {
+  .logo {
+    margin-right: 0;
+  }
+
+  .header .navbar-nav {
+    gap: 12px;
+    padding: 16px 0 8px;
+    align-items: flex-start;
+  }
+}
+
+/* ===== Первый экран ===== */
+
+.hero {
+  position: relative;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: 449px;
+  object-fit: cover;
+}
+
+/* шире 1000px фото растёт пропорционально, как в макете */
+@media (min-width: 1000px) {
+  .hero img {
+    height: auto;
+  }
+}
+
+.hero h1 {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  line-height: 27.6px;
+  color: #fff;
+}
+
+.intro {
+  margin: 15px 0 32px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ===== Карточки товаров ===== */
+
+.products {
+  display: flex;
+  gap: 4px;
+}
+
+.product {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.product > img {
+  display: block;
+  width: 100%;
+  height: auto; /* сбрасывает height-атрибут картинки, иначе aspect-ratio не работает */
+  aspect-ratio: 498 / 370;
+  object-fit: cover;
+}
+
+.product h2 {
+  margin-top: 12px;
+}
+
+.product-fav {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  line-height: 0;
+}
+
+@media (max-width: 767.98px) {
+  .products {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+/* ===== Подвал ===== */
+
+.footer {
+  margin-top: 32px;
+  padding: 52px 20px 20px;
+  background: #ededed;
+}
+
+.footer-title {
+  margin-bottom: 36px;
+  text-align: center;
+  font-size: min(70px, 12vw); /* на узких экранах уменьшается, чтобы не вылезать */
+  line-height: 1.379;
+}
+
+/* Сетка подвала: две строки, «Подарочные карты» и «Мы в соцсетях»
+   встают во вторую строку под своими колонками */
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 20px;
+}
+
+.footer h2 {
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+.footer ul {
+  display: grid;
+  gap: 9px;
+}
+
+.subscribe p {
+  margin-bottom: 8px;
+}
+
+.subscribe input {
+  width: 100%;
+  height: 27px;
+  padding: 0 10px;
+  border: .5px solid #bab5b5;
+  background: #fff;
+  font-size: 12px;
+  text-transform: none; /* введённый адрес — обычным регистром */
+}
+
+.subscribe input::placeholder {
+  color: #ededed;
+  opacity: 1;
+  text-transform: uppercase;
+}
+
+.subscribe button {
+  width: 100%;
+  height: 27px;
+  margin-top: 8px;
+  border: 0;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.copyright {
+  margin-top: 21px;
+  text-align: right;
+  font-size: 8px;
+  line-height: 11px;
+  color: #979797;
+  text-transform: none;
+}
+
+@media (min-width: 1000px) {
+  .footer-columns {
+    grid-template-columns: 231px 251px 251px 227px; /* ширины колонок из макета */
+    gap: 16px 0;
+    justify-content: space-between; /* шире 1000px колонки расходятся к краям */
+  }
+
+  .footer-group-tall {
+    grid-row: span 2;
+  }
+
+  .subscribe {
+    grid-column: 4;
+  }
+}
