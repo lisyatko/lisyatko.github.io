@@ -176,6 +176,7 @@ h1 {
   border-radius: 5px;
   margin-bottom: 12px;
 }
+.verdict-tag.gray { background: color-mix(in srgb, var(--muted) 16%, transparent); color: var(--muted); }
 .verdict-tag.low  { background: color-mix(in srgb, var(--good) 18%, transparent); color: var(--good); }
 .verdict-tag.mid  { background: color-mix(in srgb, var(--accent) 40%, transparent); color: var(--ink); }
 .verdict-tag.high { background: color-mix(in srgb, var(--danger) 16%, transparent); color: var(--danger); }
