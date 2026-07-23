@@ -268,3 +268,18 @@ h1 {
 .toast.show { transform: translateX(-50%) translateY(0); }
 
 .foot { text-align: center; font-size: 12px; color: var(--muted); margin-top: 16px; }
+
+.sources {
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: var(--muted);
+}
+.sources p { margin: 0 0 8px; }
+.sources a {
+  color: inherit;
+  text-underline-offset: 2px;
+  text-decoration-color: color-mix(in srgb, var(--muted) 50%, transparent);
+}
+.sources a:hover { color: var(--ink); text-decoration-color: var(--ink); }
