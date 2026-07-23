@@ -78,12 +78,18 @@ h1 {
   text-wrap: balance;
 }
 
+.hero-wrap { margin: 0 0 26px; }
 .hero {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 18px;
-  margin: 0 0 26px;
+}
+.hero-cap {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
 }
 
 .lede p { margin: 0 0 16px; max-width: 60ch; }
